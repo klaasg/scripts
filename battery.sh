@@ -1,6 +1,7 @@
 #!/bin/bash
 
-percentage=$(cat /sys/class/power_supply/BAT1/capacity)
+bat_dir="/sys/class/power_supply/BAT1"
+percentage=$(cat ${bat_dir}/capacity)
 
 if [ ${percentage} -le 20 ]
 then
@@ -16,9 +17,9 @@ else
 	pcolor="white"
 fi
 
-state=$(upower -i $(upower -e | grep BAT) | grep state | tr -s ' ' | cut -d' ' -f3)
+state=$(cat ${bat_dir}/status)
 
-if [ "${state}" == "discharging" ]
+if [ "${state}" == "Discharging" ]
 then
 	color="white"
 else
