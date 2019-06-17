@@ -1,3 +1,3 @@
 #!/bin/bash
 
-curl wttr.in/~${1:Belgium}?lang=nl
+curl wttr.in/~${1:-Gistel}?lang=nl
