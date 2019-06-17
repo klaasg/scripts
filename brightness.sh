@@ -32,5 +32,4 @@ then
 	brightness=0
 fi
 
-sudo chmod 666 ${file}
 echo "${brightness}" > ${file}
