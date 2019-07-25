@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# This is a todo script.
+# This is a todo script. It supports adding, listing and remmoving todo's.
 # See github.com/klaasg/todo-script for more details.
 
 
