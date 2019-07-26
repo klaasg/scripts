@@ -1,7 +1,7 @@
 #!/bin/bash
-
-# this is a file to display the brightness percentage
-# takes no arguments
+#
+# This is a script to display the brightness percentage
+# It outputs colors, using pango markup
 
 # directory of brightness settings
 dir="/sys/class/backlight/intel_backlight/"
