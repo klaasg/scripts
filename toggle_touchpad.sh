@@ -13,3 +13,5 @@ else
     xinput disable 'SynPS/2 Synaptics TouchPad' # disable
 fi
 
+
+exit 0

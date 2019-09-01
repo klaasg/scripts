@@ -11,3 +11,5 @@ then
 else
     sudo systemctl stop wpa_supplicant@wlo1.service     # stop
 fi
+
+exit 0

@@ -35,3 +35,5 @@ fi
 
 # echo correct output
 echo -e "<span color='${color}'>BAT:</span> <span color='${pcolor}'>${percentage}%</span>"
+
+exit 0

@@ -4,3 +4,5 @@
 # Default location is Gistel, West-Flanders, Belgium 
 
 curl wttr.in/~${1:-Gistel}?lang=nl
+
+exit 0

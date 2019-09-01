@@ -14,3 +14,5 @@ scrot "$@" "${file}"
 xclip -selection clipboard -t image/png -in < "${file}"
 
 xset b      # enable the bell sound
+
+exit 0

@@ -15,3 +15,5 @@ percentage=$(echo "100 * ${brightness}/${max_brightness}" | bc -l)
 
 # actual displaying of brightness
 echo "☼ ${percentage%.*}%"
+
+exit 0

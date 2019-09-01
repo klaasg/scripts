@@ -10,3 +10,5 @@ then
     # actual outputting
     echo "<span color='green'>VPN</span>"
 fi
+
+exit 0

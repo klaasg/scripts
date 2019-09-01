@@ -20,3 +20,5 @@ else
     symbol=$(systemctl status wpa_supplicant@wlo1 | grep "dead" | sed 's/^.*$/✓/')
     echo -e "<span color='#FF1D8E'>WiFi ${symbol:-✗}</span>"
 fi
+
+exit 0

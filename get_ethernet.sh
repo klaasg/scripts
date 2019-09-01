@@ -9,3 +9,5 @@ then
     # actual outputting
     echo -e "<span color='green'>Eth</span>"
 fi
+
+exit 0

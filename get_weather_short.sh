@@ -5,3 +5,5 @@
 # Default location is Gistel, West-Flanders, Belgium 
 
 curl wttr.in/~${1:-Gistel}?format=1 2>/dev/null
+
+exit 0

@@ -133,3 +133,5 @@ case $1 in
         list "$@"
     ;;
 esac
+
+exit 0

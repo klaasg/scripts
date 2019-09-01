@@ -16,3 +16,5 @@ fi
 
 # notify i3blocks so it displays the change, doesn't work always :(
 sleep 1; sudo pkill -RTMIN+10 i3blocks
+
+exit 0
