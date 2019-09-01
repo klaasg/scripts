@@ -11,8 +11,8 @@ then
 else
     # connect to ugent vpn, with password stored in a file.
     # sudo has no password so this works non-interactively
-    sudo cat /etc/openconnect/passwd | sudo openconnect --protocol=anyconnect -u klagoeth --passwd-on-stdin asavpn.ugent.be
+    sudo cat /etc/openconnect/passwd | sudo openconnect --protocol=anyconnect -u klagoeth --passwd-on-stdin asavpn.ugent.be &
 fi
 
 # notify i3blocks so it displays the change, doesn't work always :(
-sleep 2; sudo pkill -RTMIN+2 i3blocks
+sleep 1; sudo pkill -RTMIN+10 i3blocks
