@@ -41,3 +41,6 @@ sudo chmod 666 ${dir}brightness
 
 # actual changing the brightness
 echo "${brightness}" > ${file}
+
+# inform `i3blocks` about the change
+pkill -RTMIN+10 i3blocks
