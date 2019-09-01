@@ -14,4 +14,4 @@ max_brightness=$(cat "${dir}max_brightness")
 percentage=$(echo "100 * ${brightness}/${max_brightness}" | bc -l)
 
 # actual displaying of brightness
-echo "☼ ${percentage}%"
+echo "☼ ${percentage%.*}%"
