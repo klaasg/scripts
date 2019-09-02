@@ -12,4 +12,7 @@ else
     sudo systemctl stop wpa_supplicant@wlo1.service     # stop
 fi
 
+# inform `i3blocks` about the change
+pkill -RTMIN+10 i3blocks
+
 exit 0
