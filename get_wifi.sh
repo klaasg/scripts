@@ -10,7 +10,7 @@
 ssid=$( iw wlo1 link | grep SSID | cut -d' ' -f2)
 
 # is there a connection?
-if [ ${ssid} ]
+if [ "${ssid}" ]
 then
     # output green, and SSID
     echo -e "<span color='green'>WiFi: ${ssid}</span>"
