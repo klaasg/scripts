@@ -6,11 +6,11 @@
 xset -b     # disable the bell sound
 
 # set the file to save too
-file="/home/klaasg/screenshots/$(date +%d-%m-%y_%T).png"
+file="/home/klaasg/screenshots/$(date +%y-%m-%d_%T).png"
 
 # all options are passed
 scrot "$@" "${file}"
-#now copy the file to clipboard, with `xclip`
+# now copy the file to clipboard, with `xclip`
 xclip -selection clipboard -t image/png -in < "${file}"
 
 xset b      # enable the bell sound
