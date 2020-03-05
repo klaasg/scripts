@@ -1,0 +1,39 @@
+#!/bin/bash
+
+shopt -s checkwinsize
+(:)
+
+width=$COLUMNS
+height=$LINES
+
+# minimum of width and height
+((size=(width < height ? width : height) - 2 ))
+
+((top=size/3))
+
+for i in $(seq ${top} -1 1)
+do
+    printf ' %.0s' $(seq 0 $i)
+    tput setab 1
+    printf ' %.0s' $(seq 0 $(( (top - i) * 2 )))
+    
+    tput setab 0
+    printf ' %.0s' $(seq 0 $(( (i - 1) * 2)))
+    tput setab 1
+    printf ' %.0s' $(seq 0 $(( (top - i) * 2 )))
+    tput setab 0
+    echo
+done
+
+((bottom=size/3*2))
+
+for i in $(seq 0 ${bottom})
+do
+    printf ' %.0s' $(seq 0 $i)
+    tput setab 1
+    printf ' %.0s' $(seq 0 $(( (bottom - i) * 2 )))
+    tput setab 0
+    echo
+done
+
+exit 69
