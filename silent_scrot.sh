@@ -12,6 +12,10 @@ file="/home/klaasg/screenshots/$(date +%y-%m-%d_%T).png"
 scrot "$@" "${file}"
 # now copy the file to clipboard, with `xclip`
 xclip -selection clipboard -t image/png -in < "${file}"
+# create "latest" link
+latestfile="/home/klaasg/screenshots/latest_screenshot.png"
+rm "${latestfile}"
+ln -s "${file}" "${latestfile}"
 
 xset b      # enable the bell sound
 
