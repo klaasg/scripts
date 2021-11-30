@@ -7,7 +7,7 @@
 # It outputs it in green or red if connected or not, using pango markup
 
 # get the SSID, if there is one
-ssid=$( iw wlo1 link | grep SSID | cut -d' ' -f2)
+ssid=$( iw wlo1 link | grep SSID | cut -d' ' -f2-)
 
 # is there a connection?
 if [ "${ssid}" ]

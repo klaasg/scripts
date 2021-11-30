@@ -6,11 +6,25 @@
 # battery information is stored in this directory
 bat_dir="/sys/class/power_supply/BAT1"
 percentage=$(cat ${bat_dir}/capacity)   # current percentage
+# is the battery charging?
+state=$(cat ${bat_dir}/status)
 
 # choosing color for percentage
 if [ ${percentage} -le 20 ]
 then
-	pcolor="#FF1D8E"
+    if [ "${state}" == "Discharging" ]
+    then
+        # show only when last showed 5 minutes ago
+        alreadyshowed=$(find "$(dirname "$0")" -name "$(basename "$0")" -cmin -5 | wc -l)
+        if [ ${alreadyshowed} -eq 0 ]
+        then
+            # mpv --no-terminal --fs --loop=6 /home/klaasg/memes/batterylow.mp4 &
+            i3-msg fullscreen disable >/dev/null
+            mpv --no-terminal --loop=6 /home/klaasg/memes/batterylow.mp4 &
+            touch "$0"
+        fi
+    fi
+    pcolor="#FF1D8E"
 elif [ ${percentage} -ge 80 ]
 then
     pcolor="green"
@@ -21,9 +35,6 @@ then
 else
     pcolor="white"
 fi
-
-# is the battery charging?
-state=$(cat ${bat_dir}/status)
 
 # choosing color for BAT sign
 if [ "${state}" == "Discharging" ]
